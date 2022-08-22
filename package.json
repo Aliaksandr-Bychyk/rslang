@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devServ": "webpack serve",
+    "start": "webpack serve",
     "build": "webpack --mode production --env production",
     "lint": "eslint . --ext .tsx",
     "lint:fix": "eslint . --ext .tsx --fix"
