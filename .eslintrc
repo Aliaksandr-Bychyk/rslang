@@ -27,6 +27,7 @@
       "no-debugger": "off",
       "no-console": 0,
       "class-methods-use-this": "off",
+      "linebreak-style": "off",
       "@typescript-eslint/no-explicit-any": "error"
   }
 }
