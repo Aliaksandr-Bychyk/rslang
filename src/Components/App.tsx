@@ -1,11 +1,15 @@
 import React from 'react';
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
 
 function App(): JSX.Element {
   return (
-    <div className="container">
-      <h1>Hello RS School!</h1>
-      <img src="./images/cat.jpg" alt="cat" />
-    </div>
+      <>
+          <Header />
+          <Main/>
+          <Footer/>
+      </>
   );
 }
 
