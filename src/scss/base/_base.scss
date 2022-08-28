@@ -7,6 +7,24 @@
   border: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  border: 2px solid rgb(173, 164, 164);
+  border-radius: 5px;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
