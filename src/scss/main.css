@@ -299,8 +299,7 @@ body {
   display: flex;
   z-index: 999;
 }
-
-.modal-dialog {
+.modal-auth .modal-dialog {
   max-width: 780px;
   width: 95%;
   background: #ffffff;
@@ -308,13 +307,11 @@ body {
   margin: auto;
   padding: 40px 45px;
 }
-
-.modal-dialog-auth {
+.modal-auth .modal-dialog-auth {
   width: auto;
   position: relative;
 }
-
-.close-auth {
+.modal-auth .close-auth {
   font-size: 36px;
   border: none;
   background-color: transparent;
@@ -323,31 +320,26 @@ body {
   right: 20px;
   cursor: pointer;
 }
-
-.modal-title {
+.modal-auth fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+.modal-auth .modal-body {
+  margin-bottom: 22px;
+  border: 2px solid silver;
+}
+.modal-auth .modal-body .modal-title {
   margin: 0;
   font-weight: bold;
   font-size: 36px;
   line-height: 42px;
 }
-
-.label-auth {
+.modal-auth .modal-body .label-auth {
   display: block;
   margin: 30px;
 }
-
-.label-auth span {
+.modal-auth .modal-body .label-auth span {
   width: 80px;
   display: inline-block;
-}
-
-.modal-body {
-  margin-bottom: 22px;
-  border: 2px solid silver;
-}
-
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
 }
 
 .modal-footer {
@@ -355,13 +347,11 @@ fieldset {
   align-items: center;
   justify-content: flex-end;
 }
-
-.footer-buttons {
+.modal-footer .footer-buttons {
   display: flex;
   align-items: center;
 }
-
-.button-primary {
+.modal-footer .footer-buttons .button-primary {
   background: #1890ff;
   border: 1px solid #1890ff;
   color: #fff;
