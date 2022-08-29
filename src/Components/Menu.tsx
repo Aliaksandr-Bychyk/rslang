@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { IMenu } from '../Interfaces/menuInterfaces';
 
 function Menu({
@@ -18,7 +19,9 @@ function Menu({
         <ul className="navigation__list">
           {
             items.map((item) => (
-              <li className="navigation__item" key={item.id}>{item.value}</li>
+              <li className="navigation__item" key={item.id}>
+                <NavLink to={item.path} className="navigation__item">{item.value}</NavLink>
+              </li>
             ))
           }
         </ul>

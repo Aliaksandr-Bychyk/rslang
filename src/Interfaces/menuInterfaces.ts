@@ -2,6 +2,7 @@ interface IMenuItems {
   value: string,
   component: string,
   id: number,
+  path: string
 }
 
 interface IMenu {
@@ -11,4 +12,9 @@ interface IMenu {
   items: IMenuItems[]
 }
 
-export { IMenuItems, IMenu };
+interface IGame {
+  name: string,
+  image: string
+}
+
+export { IMenuItems, IMenu, IGame };
