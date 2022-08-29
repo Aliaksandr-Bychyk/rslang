@@ -12,6 +12,11 @@
       color: #000000;
       box-shadow: none;
       -webkit-box-shadow: none;
+      button {
+        display: flex;
+        background-color: transparent;
+        border: none;
+      }
     }
     .auth__btn {
       background: #1890ff;

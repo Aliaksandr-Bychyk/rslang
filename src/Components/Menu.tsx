@@ -1,12 +1,9 @@
 import React from 'react';
-import { IMenuItems } from './Articles';
+import { IMenu } from '../Interfaces/menuInterfaces';
 
 function Menu({
   active, setActive, header, items,
-}: {
-  active: boolean, setActive: React.Dispatch<React.SetStateAction<boolean>>,
-  header: string, items: IMenuItems[]
-}) {
+}: IMenu) {
   return (
     <div
       role="button"
@@ -19,9 +16,11 @@ function Menu({
       <div className="menu__content">
         <div className="menu__header">{header}</div>
         <ul className="navigation__list">
-          {items.map((item, index) => (
-            <li className="navigation__item" key={index}>{item.value}</li>
-          ))}
+          {
+            items.map((item) => (
+              <li className="navigation__item" key={item.id}>{item.value}</li>
+            ))
+          }
         </ul>
       </div>
     </div>
