@@ -12,9 +12,4 @@ interface IMenu {
   items: IMenuItems[]
 }
 
-interface IGame {
-  name: string,
-  image: string
-}
-
-export { IMenuItems, IMenu, IGame };
+export { IMenuItems, IMenu };
