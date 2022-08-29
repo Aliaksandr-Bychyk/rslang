@@ -1,6 +1,7 @@
 .main {
   .about {
     background-image: url('./../images/bg-main.jpg');
+    background-size: cover;
     height: 850px;
     .about__wrapper {
       padding: 100px 0;
