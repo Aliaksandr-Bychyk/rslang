@@ -2,13 +2,13 @@ enum URL {
   start = 'https://react-rslang-learnwords.herokuapp.com',
 }
 
-enum urlPath {
+enum UrlPath {
   words = '/words',
   users = '/users',
-  singin = '/singin'
+  singin = '/singin',
 }
 
-enum routePath {
+enum RoutePath {
   main = '/',
   games = '/games',
   sprintGame = '/sprint',
@@ -18,4 +18,4 @@ enum routePath {
   stats = '/stats',
 }
 
-export { URL, urlPath, routePath };
+export { URL, UrlPath, RoutePath };

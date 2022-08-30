@@ -1,8 +1,8 @@
 import React from 'react';
 import { URL } from '../enums/enums';
-import { challangeProps } from '../Interfaces/gameInterfaces';
+import { ChallangeProps } from '../Interfaces/gameInterfaces';
 
-function ChallengeGameWords({ data }: challangeProps) {
+function ChallengeGameWords({ data }: ChallangeProps) {
   const array = data;
   return (
     <div className="container">

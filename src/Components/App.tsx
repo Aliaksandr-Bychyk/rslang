@@ -9,7 +9,12 @@ function App(): JSX.Element {
     <>
       <Header />
       <Routes>
-        { routesArray.map((item) => <Route path={item.route} element={item.component} />) }
+        { routesArray.map((item) => (
+          <Route
+            path={item.route}
+            element={item.component}
+          />
+        )) }
       </Routes>
       <Footer />
     </>

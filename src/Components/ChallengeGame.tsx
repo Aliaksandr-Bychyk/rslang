@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { URL, urlPath } from '../enums/enums';
+import { URL, UrlPath } from '../enums/enums';
 import { IWord } from '../Interfaces/gameInterfaces';
 import ChallengeGameWords from './ChallengeGameWords';
 
@@ -18,7 +18,7 @@ export default function ChallengeGame() {
   const pages = 29;
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch(`${URL.start}${urlPath.words}?page=${getRandomNumber(pages)}`)
+    fetch(`${URL.start}${UrlPath.words}?page=${getRandomNumber(pages)}`)
       .then((res) => res.json())
       .then((result: IWord[]) => setItems(result));
   });
