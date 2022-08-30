@@ -1,6 +1,5 @@
 interface IMenuItems {
   value: string,
-  component: string,
   id: number,
   path: string
 }

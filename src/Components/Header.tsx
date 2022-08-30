@@ -9,31 +9,26 @@ function Header(): JSX.Element {
   const menuItems: IMenuItems[] = [
     {
       value: 'Главная',
-      component: '<Main />',
       id: 0,
       path: '/',
     },
     {
       value: 'Учебник',
-      component: '<Tutorial />',
       id: 1,
       path: '/tutorial',
     },
     {
       value: 'Словарь',
-      component: '<Dictionary />',
       id: 2,
       path: '/dictionary',
     },
     {
       value: 'Мини-игры',
-      component: '<Games />',
       id: 3,
       path: '/games',
     },
     {
       value: 'Статиска',
-      component: '<Stats />',
       id: 4,
       path: '/stats',
     },

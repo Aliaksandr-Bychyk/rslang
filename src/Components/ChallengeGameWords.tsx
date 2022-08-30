@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { URL } from '../enums/enums';
-import { IWord } from '../Interfaces/gameInterfaces';
+import { challangeProps } from '../Interfaces/gameInterfaces';
 
-interface challangeProps {
-  word: IWord
-}
-
-const ChallengeGameWords = ({word}:challangeProps) => {
+function ChallengeGameWords({ data }: challangeProps) {
+  const array = data;
   return (
     <div className="container">
       <div className="challenge__container">
-        <img src={`${URL.start}/${word.image}`} alt="" />
-        <span className="challenge__eng-word">{word.word}</span>
+        <img src={`${URL.start}/${array[0].image}`} alt="" />
+        <span className="challenge__eng-word">{array.pop().word}</span>
         <div className="translate">
-          <span className="translate__item">{word.wordTranslate}</span>
-          <span className="translate__item">{word.wordTranslate}</span>
-          <span className="translate__item">{word.wordTranslate}</span>
-          <span className="translate__item">{word.wordTranslate}</span>
-          <span className="translate__item">{word.wordTranslate}</span>
+          <span className="translate__item">{array[0].wordTranslate}</span>
+          <span className="translate__item">{array[0].wordTranslate}</span>
+          <span className="translate__item">{array[0].wordTranslate}</span>
+          <span className="translate__item">{array[0].wordTranslate}</span>
+          <span className="translate__item">{array[0].wordTranslate}</span>
         </div>
       </div>
     </div>

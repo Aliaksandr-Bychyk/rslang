@@ -21,4 +21,8 @@ interface IWord {
   textExampleTranslate:	string
 }
 
-export { IGame, IWord };
+interface challangeProps {
+  data: IWord[]
+}
+
+export { IGame, IWord, challangeProps };
