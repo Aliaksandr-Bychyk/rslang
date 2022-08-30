@@ -1,0 +1,42 @@
+.tutorial {
+  padding-top: 70px;
+  background-color: #bbfffd;
+  .tutorial__title {
+    text-align: center;
+  }
+  .group__offer {
+    text-align: center;
+  }
+  .group__wrapper {
+    display: flex;
+    width: 65%;
+    margin: 0 auto;
+    justify-content: space-between;
+    .btn__group {
+      color: #ffffff;
+    }
+    .group1 {
+      background-color: red;
+    }
+    .group2 {
+      background-color: yellow;
+    }
+    .group3 {
+      background-color: green;
+    }
+    .group4 {
+      background-color: cadetblue;
+    }
+    .group5 {
+      background-color: blue;
+    }
+    .group6 {
+      background-color: brown;
+    }
+  }
+  .game__wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+

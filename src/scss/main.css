@@ -364,4 +364,46 @@ body {
   margin-right: 10px;
 }
 
+.tutorial {
+  padding-top: 70px;
+  background-color: #bbfffd;
+}
+.tutorial .tutorial__title {
+  text-align: center;
+}
+.tutorial .group__offer {
+  text-align: center;
+}
+.tutorial .group__wrapper {
+  display: flex;
+  width: 65%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.tutorial .group__wrapper .btn__group {
+  color: #ffffff;
+}
+.tutorial .group__wrapper .group1 {
+  background-color: red;
+}
+.tutorial .group__wrapper .group2 {
+  background-color: yellow;
+}
+.tutorial .group__wrapper .group3 {
+  background-color: green;
+}
+.tutorial .group__wrapper .group4 {
+  background-color: cadetblue;
+}
+.tutorial .group__wrapper .group5 {
+  background-color: blue;
+}
+.tutorial .group__wrapper .group6 {
+  background-color: brown;
+}
+.tutorial .game__wrapper {
+  display: flex;
+  align-items: center;
+}
+
 /*# sourceMappingURL=main.css.map */

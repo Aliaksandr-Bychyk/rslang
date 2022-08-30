@@ -1,4 +1,4 @@
-interface IWord {
+export interface IWords {
     id: string,
     group: number,
     page:	number,
