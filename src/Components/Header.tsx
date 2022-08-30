@@ -7,11 +7,31 @@ function Header(): JSX.Element {
   const [menuActive, setMenuActive] = useState(false);
   const [authActive, setAuthActive] = useState(false);
   const menuItems: IMenuItems[] = [
-    { value: 'Главная', component: '<Main/>', id: 0 },
-    { value: 'Учебник', component: 'Tutorial', id: 1 },
-    { value: 'Словарь', component: '<Dictionary/>', id: 2 },
-    { value: 'Мини-игры', component: '<Game/>', id: 3 },
-    { value: 'Статиска', component: '<Stats/>', id: 4 },
+    {
+      value: 'Главная',
+      id: 0,
+      path: '/',
+    },
+    {
+      value: 'Учебник',
+      id: 1,
+      path: '/tutorial',
+    },
+    {
+      value: 'Словарь',
+      id: 2,
+      path: '/dictionary',
+    },
+    {
+      value: 'Мини-игры',
+      id: 3,
+      path: '/games',
+    },
+    {
+      value: 'Статиска',
+      id: 4,
+      path: '/stats',
+    },
   ];
 
   return (
