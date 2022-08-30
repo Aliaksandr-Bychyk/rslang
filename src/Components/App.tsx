@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import routesArray from '../modules/routesArray';
 
+
 function App(): JSX.Element {
   return (
     <>
@@ -16,6 +17,8 @@ function App(): JSX.Element {
           />
         )) }
       </Routes>
+      {/*<Main />*/}
+      <Tutorial />
       <Footer />
     </>
   );
