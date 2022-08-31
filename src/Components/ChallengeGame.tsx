@@ -7,9 +7,11 @@ const getRandomNumber = (max: number) => Math.round(Math.random() * max);
 
 const createGameArray = (items: IWord[]) => {
   const array: Set<IWord> = new Set();
-  while (array.size < 10) {
-    const number = getRandomNumber(19);
-    array.add(items[number]);
+  if (items) {
+    while (array.size < 10) {
+      const number = getRandomNumber(19);
+      array.add(items[number]);
+    }
   }
   return array;
 };
@@ -21,7 +23,8 @@ export default function ChallengeGame() {
     fetch(`${URL.start}${UrlPath.words}?page=${getRandomNumber(pages)}`)
       .then((res) => res.json())
       .then((result: IWord[]) => setItems(result));
-  });
+  }, []);
+
   if (items.length > 0) {
     return (
       <div className="container challenge">
