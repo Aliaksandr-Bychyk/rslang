@@ -1,0 +1,45 @@
+.results {
+  &__table {
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+  &__title {
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #1890ff;
+  }
+  &__button {
+    background-color: #1890ff;
+    margin-bottom: 1rem;
+  }
+  &__link {
+    color: #fff;
+  }
+  &__audio {
+    padding: 0.4rem;
+  }
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+th {
+  text-align: center;
+  min-width: 3rem;
+  padding: 1rem;
+  background-color: rgb(154, 154, 154);
+  color: #fff;
+}
+td {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}

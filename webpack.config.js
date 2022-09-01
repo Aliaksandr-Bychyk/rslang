@@ -40,6 +40,7 @@ module.exports = (env) => {
       },
       port: 8080,
       historyApiFallback: true,
+      hot: false,
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -59,7 +60,6 @@ module.exports = (env) => {
     },
     optimization: {
       minimizer: [
-        "...",
         new ImageMinimizerPlugin({
           minimizer: {
             implementation: ImageMinimizerPlugin.imageminMinify,

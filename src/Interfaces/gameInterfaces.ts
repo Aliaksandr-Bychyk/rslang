@@ -23,6 +23,20 @@ interface IWord {
 
 interface ChallangeProps {
   data: IWord[],
+  words: IWord[],
+  setButtonState: React.Dispatch<React.SetStateAction<boolean>>,
+  buttonState: boolean,
+  randomNumbers: number[],
+  setResults: React.Dispatch<React.SetStateAction<IResult[]>>
 }
 
-export { IGame, IWord, ChallangeProps };
+interface IResult {
+  word: string,
+  translate: string,
+  audio: string,
+  answer: boolean
+}
+
+export {
+  IGame, IWord, ChallangeProps, IResult,
+};
