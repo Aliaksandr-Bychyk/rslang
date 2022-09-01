@@ -1,0 +1,15 @@
+.word__wrapper {
+  background-color: #ffffff;
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 20px;
+  .word__content {
+    display: flex;
+    .word__img {
+      width: 300px;
+      border-radius: 20px 0px 0px 20px;
+      min-height: 300px;
+      object-fit: cover;
+    }
+  }
+}

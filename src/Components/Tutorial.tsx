@@ -1,17 +1,19 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import { IWords } from "../Interfaces/wordsInterface"
+import {IWord} from "../Interfaces/gameInterfaces";
+import Word from "./Word";
 
 const Tutorial = () => {
+    const [words, setWords] = useState<IWord[]>([])
+
     async function fetchWords() {
-        // const response =  await fetch(`https://react-rslang-learnwords.herokuapp.com/words?group=${2}&page=${3}`, );
-        // const data = await response.json() as IWords[];
-        // console.log(data)
-        const data = await axios.get<IWords[]>(`https://react-rslang-learnwords.herokuapp.com/words?group=${2}&page=${3}`);
-        console.log(data.data)
+        const response = await axios.get<IWord[]>(`https://react-rslang-learnwords.herokuapp.com/words?group=${2}&page=${3}`);
+        setWords(response.data)
     }
+
     useEffect(() => {
         fetchWords()
+        console.log(words);
     }, []);
     return (
         <div className='tutorial'>
@@ -29,10 +31,20 @@ const Tutorial = () => {
                 <p className="game__offer">
                     У вас есть возможность сыграть в игры
                 </p>
-                 <button className="button game__btn">Мини-игры</button>
+                <button className="button game__btn">Мини-игры</button>
+            </div>
+
+            <div className="wrapper__words">
+                {words.map(word => <Word id={word.id} group={word.group} page={word.page} word={word.word}
+                                         image={word.image} audio={word.audio} audioMeaning={word.audioMeaning}
+                                         audioExample={word.audioExample} textMeaning={word.textMeaning}
+                                         textExample={word.textExample} transcription={word.transcription}
+                                         wordTranslate={word.wordTranslate}
+                                         textMeaningTranslate={word.textMeaningTranslate}
+                                         textExampleTranslate={word.textExampleTranslate}
+                key={word.id}/>)}
             </div>
         </div>
-    );
-};
-
+    )
+}
 export default Tutorial;

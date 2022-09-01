@@ -3,17 +3,24 @@
   background-color: #bbfffd;
   .tutorial__title {
     text-align: center;
+    margin-top: 20px;
   }
   .group__offer {
     text-align: center;
+    margin-top: 20px;
   }
   .group__wrapper {
     display: flex;
     width: 65%;
-    margin: 0 auto;
+    margin: 20px auto;
     justify-content: space-between;
     .btn__group {
       color: #ffffff;
+      border-radius: 5px;
+      &:hover, &:focus {
+        box-shadow: 0 0.5em 0.5em -0.4em #ffa260;
+        transform: translatey(-0.5em);
+      }
     }
     .group1 {
       background-color: red;
@@ -37,6 +44,10 @@
   .game__wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+    gap: 20px;
   }
 }
 
