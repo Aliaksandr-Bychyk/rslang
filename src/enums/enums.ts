@@ -18,4 +18,14 @@ enum RoutePath {
   stats = '/stats',
 }
 
-export { URL, UrlPath, RoutePath };
+enum Numbers {
+  zero = 0,
+  lengthRandomArray = 4,
+  arraySize = 10,
+  maxRandomNumber = 19,
+  pages = 29,
+}
+
+export {
+  URL, UrlPath, RoutePath, Numbers,
+};

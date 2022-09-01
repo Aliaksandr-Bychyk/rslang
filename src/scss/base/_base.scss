@@ -29,6 +29,12 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+button:disabled {
+  background-color: #595959;
+  color: #d9d9d9;
+  cursor: auto;
+}
+
 .button {
   display: flex;
   align-items: center;
@@ -49,4 +55,12 @@ body {
   max-width: 1140px;
   width: 100%;
   margin: 0 auto;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 600;
 }

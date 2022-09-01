@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Menu from './Menu';
 import { IMenuItems } from '../Interfaces/menuInterfaces';
 import Auth from './Auth';
+import { RoutePath } from '../enums/enums';
 
 function Header(): JSX.Element {
   const [menuActive, setMenuActive] = useState(false);
@@ -10,27 +11,27 @@ function Header(): JSX.Element {
     {
       value: 'Главная',
       id: 0,
-      path: '/',
+      path: RoutePath.main,
     },
     {
       value: 'Учебник',
       id: 1,
-      path: '/tutorial',
+      path: RoutePath.tutorial,
     },
     {
       value: 'Словарь',
       id: 2,
-      path: '/dictionary',
+      path: RoutePath.dictionary,
     },
     {
       value: 'Мини-игры',
       id: 3,
-      path: '/games',
+      path: RoutePath.games,
     },
     {
       value: 'Статиска',
       id: 4,
-      path: '/stats',
+      path: RoutePath.stats,
     },
   ];
 
