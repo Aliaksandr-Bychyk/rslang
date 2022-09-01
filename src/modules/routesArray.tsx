@@ -1,7 +1,7 @@
 import React from 'react';
 import Main from '../Components/Main';
 import Games from '../Components/Games';
-import ChallengeGame from '../Components/ChallengeGame';
+import ChallengeGame from '../Components/ChallengeGame/ChallengeGame';
 import { RoutePath } from '../enums/enums';
 import SprintGame from '../Components/SprintGame';
 import Tutorial from '../Components/Tutorial';

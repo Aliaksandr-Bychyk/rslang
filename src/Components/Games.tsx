@@ -1,17 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { RoutePath } from '../enums/enums';
 import { IGame } from '../Interfaces/gameInterfaces';
 
 const games: IGame[] = [
   {
     name: 'Sprint',
     image: './images/sprint.png',
-    path: '/sprint',
+    path: RoutePath.sprintGame,
   },
   {
     name: 'Audio Challange',
     image: './images/challenge.png',
-    path: '/challenge',
+    path: RoutePath.challengeGame,
   },
 ];
 
