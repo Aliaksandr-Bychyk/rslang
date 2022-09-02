@@ -28,37 +28,24 @@ function ExampleComponent({ str }: { str: string }) {
   );
 }
 
-function Word({
-  word,
-  image,
-  audio,
-  audioMeaning,
-  audioExample,
-  textMeaning,
-  textExample,
-  transcription,
-  wordTranslate,
-  textMeaningTranslate,
-  textExampleTranslate,
-}: IWord) {
+function Word({ ...args }: IWord) {
   const [audioPlayer, setAudioPlayer] = useState(false);
 
-  function playAudio(audioArray: [string, string, string]) {
+  function playAudio(audioArray: string[]) {
     setAudioPlayer(true);
-    const player = new Audio();
-    player.volume = 1;
+    const player = new Audio(`${URL.start}/${audioArray[0]}`);
     let current = 0;
-    player.src = `${URL.start}/${audioArray[0]}`;
     player.play();
     player.addEventListener('ended', () => {
       if (current === 2) {
         setAudioPlayer(false);
-        player.removeEventListener('ended', () => {
-        });
+        player.removeEventListener('ended', () => {});
       }
-      current += 1;
-      player.src = `${URL.start}/${audioArray[current]}`;
-      player.play();
+      if (current < 2) {
+        current += 1;
+        player.src = `${URL.start}/${audioArray[current]}`;
+        player.play();
+      }
     });
   }
   const volume = {
@@ -72,19 +59,19 @@ function Word({
   return (
     <div className="word__wrapper">
       <div className="word__content">
-        <img src={`${URL.start}/${image}`} alt="word__image" className="word__img" />
+        <img src={`${URL.start}/${args.image}`} alt="word__image" className="word__img" />
         <div className="word__description">
           <div className="word__header">
             <p className="word__title">
-              <span className="word__name">{word}</span>
-              <span className="word__transcription">{transcription}</span>
-              <span className="word__translate">{wordTranslate}</span>
+              <span className="word__name">{args.word}</span>
+              <span className="word__transcription">{args.transcription}</span>
+              <span className="word__translate">{args.wordTranslate}</span>
             </p>
             <button
               type="button"
               className="volume__btn button__video"
               onClick={() => {
-                playAudio([audio, audioMeaning, audioExample]);
+                playAudio([args.audio, args.audioMeaning, args.audioExample]);
               }}
             >
               <svg
@@ -109,16 +96,16 @@ function Word({
             </button>
           </div>
           <div className="word__meaning__wrapper">
-            <p className="word__meaning">
-              <MeaningComponent str={textMeaning} />
-            </p>
-            <p className="word__meaning__translate">{textMeaningTranslate}</p>
+            <div className="word__meaning">
+              <MeaningComponent str={args.textMeaning} />
+            </div>
+            <p className="word__meaning__translate">{args.textMeaningTranslate}</p>
           </div>
           <div className="word__example__wrapper">
-            <p className="word__example">
-              <ExampleComponent str={textExample} />
-            </p>
-            <p className="word__example__translate">{textExampleTranslate}</p>
+            <div className="word__example">
+              <ExampleComponent str={args.textExample} />
+            </div>
+            <p className="word__example__translate">{args.textExampleTranslate}</p>
           </div>
         </div>
       </div>

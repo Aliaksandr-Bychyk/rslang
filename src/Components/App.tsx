@@ -13,10 +13,10 @@ function App(): JSX.Element {
           <Route
             path={item.route}
             element={item.component}
+            key={Date.now()}
           />
         )) }
       </Routes>
-      {/* <Main /> */}
       <Footer />
     </>
   );

@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { NavLink } from 'react-router-dom';
+import { RoutePath, URL } from '../enums/enums';
 import { IWord } from '../Interfaces/gameInterfaces';
 import Word from './Word';
 
 function Tutorial() {
-  const [words, setWords] = useState<IWord[]>([]);
-  const [group, setGroup] = useState(JSON.parse(window.localStorage.getItem('group')) as number || 0);
-  const [page, setPage] = useState(JSON.parse(window.localStorage.getItem('page')) as number || 0);
+  const [words, setWords] = useState([] as IWord[]);
+  const [group, setGroup] = useState(() => JSON.parse(window.localStorage.getItem('group')) as number || 0);
+  const [page, setPage] = useState(() => JSON.parse(window.localStorage.getItem('page')) as number || 0);
 
-  async function fetchWords(groupFetch: number, pageFetch: number) {
-    const response = await axios.get<IWord[]>(`https://react-rslang-learnwords.herokuapp.com/words?group=${groupFetch}&page=${pageFetch}`);
+  function fetchWords(groupFetch: number, pageFetch: number) {
+    fetch(`${URL.start}/words?group=${groupFetch}&page=${pageFetch}`)
+      .then((res) => res.json())
+      .then((array) => {
+        setWords(array as IWord[]);
+      });
     setGroup(groupFetch);
     setPage(pageFetch);
-    setWords(response.data);
   }
 
   useEffect(() => {
@@ -65,7 +69,7 @@ function Tutorial() {
         <p className="game__offer">
           У вас есть возможность сыграть в игры
         </p>
-        <button type="button" className="button game__btn">Мини-игры</button>
+        <NavLink className="button game__btn" to={RoutePath.games}>Мини-игры</NavLink>
       </div>
 
       <div className="wrapper__words">
