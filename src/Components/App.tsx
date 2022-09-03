@@ -4,7 +4,6 @@ import Header from './Header';
 import Footer from './Footer';
 import routesArray from '../modules/routesArray';
 
-
 function App(): JSX.Element {
   return (
     <>
@@ -14,11 +13,10 @@ function App(): JSX.Element {
           <Route
             path={item.route}
             element={item.component}
+            key={Date.now()}
           />
         )) }
       </Routes>
-      {/*<Main />*/}
-      <Tutorial />
       <Footer />
     </>
   );
