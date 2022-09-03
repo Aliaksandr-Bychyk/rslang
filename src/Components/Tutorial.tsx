@@ -28,17 +28,33 @@ function Tutorial() {
     window.localStorage.setItem('page', String(page));
   }, [group, page]);
 
+  const groupButtons = [
+    { data: '1', onClick: () => { fetchWords(0, 0); } },
+    { data: '2', onClick: () => { fetchWords(1, 0); } },
+    { data: '3', onClick: () => { fetchWords(2, 0); } },
+    { data: '4', onClick: () => { fetchWords(3, 0); } },
+    { data: '5', onClick: () => { fetchWords(4, 0); } },
+    { data: '6', onClick: () => { fetchWords(5, 0); } },
+  ];
+
   return (
     <div className="tutorial">
       <h1 className="tutorial__title">Учебник</h1>
       <p className="group__offer">Выберите желаемый раздел</p>
       <div className="group__wrapper">
-        <button type="button" className="button btn__group group1" datatype="1" onClick={() => { fetchWords(0, 0); }}>Раздел 1</button>
-        <button type="button" className="button btn__group group2" datatype="2" onClick={() => { fetchWords(1, 0); }}>Раздел 2</button>
-        <button type="button" className="button btn__group group3" datatype="3" onClick={() => { fetchWords(2, 0); }}>Раздел 3</button>
-        <button type="button" className="button btn__group group4" datatype="4" onClick={() => { fetchWords(3, 0); }}>Раздел 4</button>
-        <button type="button" className="button btn__group group5" datatype="5" onClick={() => { fetchWords(4, 0); }}>Раздел 5</button>
-        <button type="button" className="button btn__group group6" datatype="6" onClick={() => { fetchWords(5, 0); }}>Раздел 6</button>
+        {
+          groupButtons.map((el) => (
+            <button
+              key={el.data}
+              type="button"
+              className={`button btn__group group${el.data}`}
+              datatype={el.data}
+              onClick={el.onClick}
+            >
+              {`Раздел ${el.data}`}
+            </button>
+          ))
+        }
       </div>
       <div className="page__wrapper">
         <button
