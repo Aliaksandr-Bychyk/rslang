@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import { URL } from '../../enums/enums';
 import { ChallangeProps, IWord } from '../../Interfaces/gameInterfaces';
 import { answerClickEvent, getSound, getTrueValue } from '../../modules/challengeGameFunctions';
+import { getKey } from '../../modules/getRandom';
 
 const getImageComponent = (buttonState: boolean, value: IWord, src: string) => {
   if (!buttonState) {
@@ -37,7 +38,7 @@ export default function ChallengeGameWords(
       </div>
       <audio src={audioStc} autoPlay />
       <div className="translate">
-        { randomNumbers.map((number) => (
+        { randomNumbers.map((number, ind) => (
           <button
             className={buttonState
               ? `translate__item button ${number === index ? 'true' : 'false'}`
@@ -50,6 +51,7 @@ export default function ChallengeGameWords(
               number === index,
             )}
             disabled={buttonState}
+            key={getKey(ind)}
           >
             { data[number].wordTranslate }
           </button>

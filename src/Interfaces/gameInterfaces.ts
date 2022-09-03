@@ -37,6 +37,47 @@ interface IResult {
   answer: boolean
 }
 
+interface IClick {
+  setScore: React.Dispatch<React.SetStateAction<number>>,
+  setWordIndex: React.Dispatch<React.SetStateAction<number>>,
+  setImageArray: React.Dispatch<React.SetStateAction<boolean[]>>,
+  setScoreCount: React.Dispatch<React.SetStateAction<number>>,
+  scoreCount: number,
+  isCorrect: boolean,
+  imageArray: boolean[],
+}
+
+interface ISprintButton {
+  getButtonArgs: (isCorrect: boolean) => IClick,
+  wordIndex: number,
+  index: number,
+}
+
+interface ISprintContent {
+  items: IWord[],
+  setResultScore: React.Dispatch<React.SetStateAction<number>>,
+  setIsEndGame: React.Dispatch<React.SetStateAction<boolean>>,
+}
+
+interface ISprintTimer {
+  score: number,
+  setResultScore: React.Dispatch<React.SetStateAction<number>>,
+  setIsEndGame: React.Dispatch<React.SetStateAction<boolean>>,
+}
+
+interface ISprintImage {
+  scoreCount: number,
+  imageArray: boolean[],
+}
+
 export {
-  IGame, IWord, ChallangeProps, IResult,
+  IGame,
+  IWord,
+  ChallangeProps,
+  IResult,
+  IClick,
+  ISprintButton,
+  ISprintContent,
+  ISprintImage,
+  ISprintTimer,
 };
