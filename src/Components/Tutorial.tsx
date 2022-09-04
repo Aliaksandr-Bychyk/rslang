@@ -27,7 +27,7 @@ function Tutorial() {
     window.localStorage.setItem('group', String(group));
     window.localStorage.setItem('page', String(page));
   }, [group, page]);
-
+  console.log('1');
   const groupButtons = [
     { data: '1', onClick: () => { fetchWords(0, 0); } },
     { data: '2', onClick: () => { fetchWords(1, 0); } },
