@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { login, register } from '../modules/authorization';
+import {
+  resetForm, APIRegistration, APISingin,
+} from '../modules/authorization';
 
 function Auth(
   { active, setActive }:
@@ -25,30 +27,43 @@ function Auth(
           onSubmit={(event) => {
             event.preventDefault();
             if (isAuthModal) {
-              login();
+              APISingin();
             } else {
-              register();
+              APIRegistration();
             }
             setActive(!active);
           }}
         >
           <fieldset className="modal-body">
             <legend className="modal-title">{isAuthModal ? 'Авторизация' : 'Регистрация'}</legend>
-            <label className="label-auth" htmlFor="login">
-              <span>Логин</span>
+            <label className="label-auth" htmlFor="email">
+              <span>Email</span>
               <input
-                id="login"
+                id="email"
                 type="text"
                 minLength={3}
                 required
               />
             </label>
+            {
+              !isAuthModal && (
+                <label className="label-auth" htmlFor="name">
+                  <span>Имя</span>
+                  <input
+                    id="name"
+                    type="text"
+                    minLength={3}
+                    required
+                  />
+                </label>
+              )
+            }
             <label className="label-auth" htmlFor="password">
               <span>Пароль</span>
               <input
                 id="password"
                 type="password"
-                minLength={5}
+                minLength={8}
                 required
               />
             </label>
@@ -59,7 +74,10 @@ function Auth(
                 tabIndex={0}
                 role="button"
                 className="link"
-                onClick={() => setAuthModal(!isAuthModal)}
+                onClick={() => {
+                  setAuthModal(!isAuthModal);
+                  resetForm();
+                }}
                 onKeyDown={() => {}}
               >
                 {isAuthModal ? 'Нет аккаунта?' : 'Есть аккаунт?'}
