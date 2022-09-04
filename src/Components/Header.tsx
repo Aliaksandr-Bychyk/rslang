@@ -76,7 +76,7 @@ function Header(): JSX.Element {
                 fill="white"
               />
             </svg>
-            <span className="auth__span">Sign in</span>
+            <span className="auth__span">Авторизоваться</span>
           </button>
         </div>
       </div>
