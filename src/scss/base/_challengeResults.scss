@@ -1,3 +1,13 @@
+.challenge-results {
+  padding-top: 4.375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
 .results {
   &__table {
     border-collapse: collapse;

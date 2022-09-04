@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Numbers } from '../../enums/enums';
 import { ISprintTimer } from '../../Interfaces/gameInterfaces';
 import { checkResult } from '../../modules/sprintGameFunctions';
 
 export default function SprintTimer({ ...args }: ISprintTimer) {
-  const [timer, setTimer] = useState(10);
+  const [timer, setTimer] = useState(Numbers.sprintTime);
 
   useEffect(() => {
     const timeInterval = setInterval(

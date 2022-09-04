@@ -24,6 +24,7 @@ enum Numbers {
   groups,
   arraySize = 10,
   maxRandomNumber = 19,
+  sprintTime,
   pages = 29,
   maxScoreCount = 80,
 }
