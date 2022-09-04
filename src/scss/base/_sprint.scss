@@ -1,0 +1,135 @@
+.sprint-content {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(204 204 204);
+  padding-bottom: 0.5rem;
+  border: 0.5rem solid rgb(106 107 136);
+}
+
+.sprint {
+  position: relative;
+  z-index: 1;
+  padding-top: 4.375rem;
+  height: calc(100vh - 8.75rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__score {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__score-count {
+    width: 100%;
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: #1890ff;
+    color: #fff;
+    height: 3rem;
+  }
+
+  &__answers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  &__images {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__image {
+
+  }
+
+  &__score-number {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  &__quest {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: rgb(123, 151, 162);
+    padding: 1.5rem;
+  }
+
+  &__question {
+    font-size: 1rem;
+    color: red;
+  }
+
+  &__word {
+    color: rgb(241, 255, 91);
+  }
+
+  &__translate {
+    color: rgb(130, 255, 84);
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 0.5rem;
+  }
+
+  &__false {
+    width: 10rem;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    background-color: rgb(164, 32, 32);
+  }
+
+  &__true {
+    width: 10rem;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    background-color: blueviolet;
+  }
+
+}
+
+.timer {
+  position: absolute;
+  top: 80px;
+  left: 70px;
+  font-size: 1.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  font-weight: 600;
+  border: 0.2rem solid #1890ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2.25rem;
+}
+
+.equals {
+  font-size: 1rem;
+  color: red;
+}
+
+._none {
+  display: none;
+}
