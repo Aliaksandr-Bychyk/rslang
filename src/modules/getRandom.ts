@@ -11,4 +11,6 @@ const getRandomNumbers = (data: IWord[], words: IWord[], length:number, max: num
     .sort(() => Math.random() - 0.5)
 );
 
-export { getRandomNumber, getRandomNumbers };
+const getKey = (index: number) => Math.sqrt(index);
+
+export { getRandomNumber, getRandomNumbers, getKey };

@@ -3,10 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { RoutePath } from '../../enums/enums';
 import { IResult } from '../../Interfaces/gameInterfaces';
 import { getSound } from '../../modules/challengeGameFunctions';
+import { getKey } from '../../modules/getRandom';
 
 export default function ChallangeGameResults({ results }: { results: IResult[] }) {
   return (
-    <div className="container challenge">
+    <div className="container challenge-results">
       <div className="results">
         <table className="results__table">
           <caption className="results__title">Results</caption>
@@ -19,8 +20,8 @@ export default function ChallangeGameResults({ results }: { results: IResult[] }
             </tr>
           </thead>
           <tbody>
-            { results.map((item) => (
-              <tr>
+            { results.map((item, ind) => (
+              <tr key={getKey(ind)}>
                 <td>
                   <button className="results__audio button" type="button" onClick={() => getSound(item.audio)}>
                     <img className="results__image" src="../images/sound.svg" alt="audio" />

@@ -17,7 +17,7 @@ const games: IGame[] = [
 ];
 
 const createGame = (name: string, img: string, path: string) => (
-  <NavLink to={path}>
+  <NavLink to={path} key={name}>
     <div className="games__item">
       <img className="games__image" src={img} alt="game" />
       <h4 className="games__title">{name}</h4>

@@ -21,11 +21,19 @@ enum RoutePath {
 enum Numbers {
   zero = 0,
   lengthRandomArray = 4,
+  groups,
   arraySize = 10,
   maxRandomNumber = 19,
+  sprintTime,
   pages = 29,
+  maxScoreCount = 80,
+}
+
+enum Arrow {
+  rigth = 'ArrowRight',
+  left = 'ArrowLeft',
 }
 
 export {
-  URL, UrlPath, RoutePath, Numbers,
+  URL, UrlPath, RoutePath, Numbers, Arrow,
 };
