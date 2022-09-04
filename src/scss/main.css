@@ -646,4 +646,30 @@ td {
   margin-bottom: 5px;
 }
 
+.stats {
+  background-color: #dec7fd;
+}
+.stats .stats__wrapper {
+  padding-top: 80px;
+}
+.stats .stats__wrapper .stats__title {
+  text-align: center;
+}
+.stats .stats__wrapper .day__stats .stats__card-day {
+  width: 800px;
+  margin: 0 auto;
+}
+.stats .stats__wrapper .game-stats__wrapper {
+  display: flex;
+}
+.stats .stats__wrapper .stats__card {
+  height: 250px;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px 0;
+  border-radius: 20px;
+}
+.stats .stats__wrapper .stats__card .stats__card__wrapper {
+  padding: 20px;
+}
+
 /*# sourceMappingURL=main.css.map */
