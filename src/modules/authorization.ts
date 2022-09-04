@@ -18,9 +18,9 @@ interface IBodyRequest {
 }
 
 function getEmailAndPassword() {
-  const inputEmail: HTMLInputElement = document.getElementById('email') as HTMLInputElement;
-  const inputName: HTMLInputElement | undefined = document.getElementById('name') as HTMLInputElement || undefined;
-  const inputPassword: HTMLInputElement = document.getElementById('password') as HTMLInputElement;
+  const inputEmail = document.getElementById('email') as HTMLInputElement;
+  const inputName = document.getElementById('name') as HTMLInputElement || undefined;
+  const inputPassword = document.getElementById('password') as HTMLInputElement;
   return { inputEmail, inputName, inputPassword };
 }
 
@@ -77,5 +77,5 @@ function resetForm() {
 }
 
 export {
-  resetForm, APIRegistration, APISingin, APIGetNewToken,
+  resetForm, APIRegistration, APISingin, APIGetNewToken, IAPISigninResponse,
 };
