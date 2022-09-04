@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { login, register } from '../modules/authorization';
 
 function Auth(
   { active, setActive }:
@@ -7,7 +8,7 @@ function Auth(
     setActive: React.Dispatch<React.SetStateAction<boolean>>
   },
 ) {
-  const [isAuth, setAuth] = useState(true);
+  const [isAuthModal, setAuthModal] = useState(true);
   return (
     <div className="modal-auth">
       <div className="modal-dialog modal-dialog-auth">
@@ -19,16 +20,37 @@ function Auth(
         >
           &times;
         </button>
-        <form id="logInForm">
+        <form
+          id="logInForm"
+          onSubmit={(event) => {
+            event.preventDefault();
+            if (isAuthModal) {
+              login();
+            } else {
+              register();
+            }
+            setActive(!active);
+          }}
+        >
           <fieldset className="modal-body">
-            <legend className="modal-title">{isAuth ? 'Авторизация' : 'Регистрация'}</legend>
+            <legend className="modal-title">{isAuthModal ? 'Авторизация' : 'Регистрация'}</legend>
             <label className="label-auth" htmlFor="login">
               <span>Логин</span>
-              <input id="login" type="text" />
+              <input
+                id="login"
+                type="text"
+                minLength={3}
+                required
+              />
             </label>
             <label className="label-auth" htmlFor="password">
               <span>Пароль</span>
-              <input id="password" type="password" />
+              <input
+                id="password"
+                type="password"
+                minLength={5}
+                required
+              />
             </label>
           </fieldset>
           <div className="modal-footer">
@@ -37,12 +59,17 @@ function Auth(
                 tabIndex={0}
                 role="button"
                 className="link"
-                onClick={() => setAuth(!isAuth)}
+                onClick={() => setAuthModal(!isAuthModal)}
                 onKeyDown={() => {}}
               >
-                {isAuth ? 'Нет аккаунта?' : 'Есть аккаунт?'}
+                {isAuthModal ? 'Нет аккаунта?' : 'Есть аккаунт?'}
               </span>
-              <button className="button button-primary button-login" type="submit">{isAuth ? 'Войти' : 'Зарегистрироваться'}</button>
+              <button
+                className="button button-primary button-login"
+                type="submit"
+              >
+                {isAuthModal ? 'Войти' : 'Зарегистрироваться'}
+              </button>
             </div>
           </div>
         </form>

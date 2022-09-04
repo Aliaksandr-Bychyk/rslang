@@ -43,10 +43,25 @@
     .label-auth {
       display: block;
       margin: 30px;
-    }
-    .label-auth span {
-      width: 80px;
-      display: inline-block;
+
+      span {
+        width: 80px;
+        display: inline-block;
+        &::after {
+          content: '*';
+          color: red;
+        }
+      }
+
+      input {
+        &:invalid {
+          border-color: red;
+        }
+        &:valid {
+          border-color: green;
+        }
+      }
+
     }
   }
 }
