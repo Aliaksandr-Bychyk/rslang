@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { RoutePath } from '../enums/enums';
 import { IGame } from '../Interfaces/gameInterfaces';
 
@@ -16,19 +16,28 @@ const games: IGame[] = [
   },
 ];
 
-const createGame = (name: string, img: string, path: string) => (
-  <NavLink to={path}>
+const createGame = (name: string, img: string, path: string, isBook: boolean) => (
+  <Link to={isBook ? path : RoutePath.level} state={{ path }} key={name}>
     <div className="games__item">
       <img className="games__image" src={img} alt="game" />
       <h4 className="games__title">{name}</h4>
     </div>
-  </NavLink>
+  </Link>
 );
 
 export default function Games() {
+  const isBook = JSON.parse(localStorage.getItem('isBook')) as boolean;
   return (
     <div className="container">
-      <div className="games">{ games.map((game) => createGame(game.name, game.image, game.path)) }</div>
+      <div className="games">
+        {games.map((game) => (
+          createGame(
+            game.name,
+            game.image,
+            game.path,
+            isBook,
+          )))}
+      </div>
     </div>
   );
 }
