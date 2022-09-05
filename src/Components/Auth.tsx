@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import {
   resetForm, APIRegistration, APISingin,
 } from '../modules/authorization';
@@ -15,6 +14,7 @@ function Auth(
   },
 ) {
   const [isAuthModal, setAuthModal] = useState(true);
+
   return (
     <div className="modal-auth">
       <div className="modal-dialog modal-dialog-auth">
@@ -30,12 +30,10 @@ function Auth(
           id="logInForm"
           onSubmit={async (event) => {
             event.preventDefault();
-            if (isAuthModal) {
-              await APISingin();
-            } else {
+            if (!isAuthModal) {
               await APIRegistration();
-              await APISingin();
             }
+            await APISingin();
             setActive(!active);
           }}
         >

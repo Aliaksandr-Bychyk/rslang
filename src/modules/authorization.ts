@@ -32,7 +32,6 @@ async function APIRequest<T, U>(method: string, requestLink: string, body?: T, t
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(body),
     ...(Object.keys(body).length > 0) && { body: JSON.stringify(body) },
   });
   const content = await rawResponse.json() as U;
@@ -53,6 +52,7 @@ async function APIRegistration() {
 
 async function APIGetNewToken(userID: string, token: string) {
   await APIRequest<unknown, IAPISigninResponse>(HTTPMethod.get, `${UrlPath.users}/${userID}/tokens`, {}, token);
+  console.log('new token');
 }
 
 async function APISingin() {
