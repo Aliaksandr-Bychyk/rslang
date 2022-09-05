@@ -2620,14 +2620,14 @@ var enums_UrlPath;
 var RoutePath;
 
 (function (RoutePath) {
-  RoutePath["main"] = "/";
-  RoutePath["games"] = "/games";
-  RoutePath["sprintGame"] = "/sprint";
-  RoutePath["challengeGame"] = "/challenge";
-  RoutePath["tutorial"] = "/tutorial";
-  RoutePath["dictionary"] = "/dictionary";
-  RoutePath["stats"] = "/stats";
-  RoutePath["level"] = "/level";
+  RoutePath["main"] = "";
+  RoutePath["games"] = "games";
+  RoutePath["sprintGame"] = "sprint";
+  RoutePath["challengeGame"] = "challenge";
+  RoutePath["tutorial"] = "tutorial";
+  RoutePath["dictionary"] = "dictionary";
+  RoutePath["stats"] = "stats";
+  RoutePath["level"] = "level";
 })(RoutePath || (RoutePath = {}));
 
 var Numbers;
@@ -4547,7 +4547,6 @@ function Tutorial() {
     window.localStorage.setItem('group', String(group));
     window.localStorage.setItem('page', String(page));
   }, [group, page]);
-  console.log('1');
   var groupButtons = [{
     data: '1',
     onClick: function onClick() {
@@ -4800,6 +4799,7 @@ function App() {
 var container = document.getElementById('root');
 var root = (0,client/* createRoot */.s)(container);
 root.render( /*#__PURE__*/(0,jsx_runtime.jsx)(BrowserRouter, {
+  basename: "/rslang",
   children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_App, {})
 }));
 })();
