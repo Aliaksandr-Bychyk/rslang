@@ -64,6 +64,25 @@ const nextButtonClick = (
   if (results.length === Numbers.arraySize) setIsResult(!isResult);
 };
 
+const getImageComponent = (buttonState: boolean, value: IWord, src: string) => {
+  if (!buttonState) {
+    return (
+      <div className="challenge__answer">
+        <button className="sound-word" type="button" onClick={() => getSound(src)}>
+          <img src="../images/volumeImage.webp" alt="" className="challenge__image" />
+        </button>
+        <span className="challenge__eng-word _disabled">{value.word}</span>
+      </div>
+    );
+  }
+  return (
+    <div className="challenge__answer">
+      <img src={`${URL.start}/${value.image}`} alt="" className="challenge__image" />
+      <span className="challenge__eng-word">{value.word}</span>
+    </div>
+  );
+};
+
 export {
   getNextWord,
   createGameArray,
@@ -71,4 +90,5 @@ export {
   answerClickEvent,
   getTrueValue,
   nextButtonClick,
+  getImageComponent,
 };
