@@ -1,4 +1,4 @@
-const APILink = 'https://react-rslang-learnwords.herokuapp.com/';
+import { HTTPMethod, URL, UrlPath } from '../enums/enums';
 
 interface IAPIReqistrationResponse {
   id?: string,
@@ -25,13 +25,14 @@ function getEmailAndPassword() {
 }
 
 async function APIRequest<T, U>(method: string, requestLink: string, body?: T, token?: string) {
-  const rawResponse = await fetch(APILink + requestLink, {
+  const rawResponse = await fetch(URL.start + requestLink, {
     method,
     headers: {
       Authorization: token ? `Bearer ${token}` : 'Basic',
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
+    body: JSON.stringify(body),
     ...(Object.keys(body).length > 0) && { body: JSON.stringify(body) },
   });
   const content = await rawResponse.json() as U;
@@ -45,12 +46,14 @@ async function APIRegistration() {
     email: inputEmail.value,
     password: inputPassword.value,
   };
-  const { rawResponse, content } = await APIRequest<IBodyRequest, IAPIReqistrationResponse>('POST', 'users', obj);
+  const { rawResponse, content } = await APIRequest<
+  IBodyRequest, IAPIReqistrationResponse
+  >(HTTPMethod.post, UrlPath.users, obj);
   console.log(content, rawResponse.status);
 }
 
 async function APIGetNewToken(userID: string, token: string) {
-  const { rawResponse, content } = await APIRequest<unknown, IAPISigninResponse>('GET', `users/${userID}/tokens`, {}, token);
+  const { rawResponse, content } = await APIRequest<unknown, IAPISigninResponse>(HTTPMethod.get, `${UrlPath.users}/${userID}/tokens`, {}, token);
   console.log(content, rawResponse.status);
 }
 
@@ -60,7 +63,12 @@ async function APISingin() {
     email: inputEmail.value,
     password: inputPassword.value,
   };
-  const { rawResponse, content } = await APIRequest<IBodyRequest, IAPISigninResponse>('POST', 'signin', obj);
+  console.log(obj);
+
+  const { rawResponse, content } = await APIRequest<
+  IBodyRequest, IAPISigninResponse
+  >(HTTPMethod.post, UrlPath.signin, obj);
+
   console.log(content, rawResponse.status);
   if (rawResponse.status === 200) {
     window.localStorage.setItem('user', JSON.stringify({
