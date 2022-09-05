@@ -1,27 +1,8 @@
 import React, { ReactNode } from 'react';
 import { URL } from '../../enums/enums';
-import { ChallangeProps, IWord } from '../../Interfaces/gameInterfaces';
-import { answerClickEvent, getSound, getTrueValue } from '../../modules/challengeGameFunctions';
+import { ChallangeProps } from '../../Interfaces/gameInterfaces';
+import { answerClickEvent, getImageComponent, getTrueValue } from '../../modules/challengeGameFunctions';
 import { getKey } from '../../modules/getRandom';
-
-const getImageComponent = (buttonState: boolean, value: IWord, src: string) => {
-  if (!buttonState) {
-    return (
-      <div className="challenge__answer">
-        <button className="sound-word" type="button" onClick={() => getSound(src)}>
-          <img src="../images/volumeImage.webp" alt="" className="challenge__image" />
-        </button>
-        <span className="challenge__eng-word _disabled">{value.word}</span>
-      </div>
-    );
-  }
-  return (
-    <div className="challenge__answer">
-      <img src={`${URL.start}/${value.image}`} alt="" className="challenge__image" />
-      <span className="challenge__eng-word">{value.word}</span>
-    </div>
-  );
-};
 
 export default function ChallengeGameWords(
   {
