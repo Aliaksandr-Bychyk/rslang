@@ -9,14 +9,14 @@ enum UrlPath {
 }
 
 enum RoutePath {
-  main = '',
-  games = 'games',
-  sprintGame = 'sprint',
-  challengeGame = 'challenge',
-  tutorial = 'tutorial',
-  dictionary = 'dictionary',
-  stats = 'stats',
-  level = 'level',
+  main = '/',
+  games = '/games',
+  sprintGame = '/sprint',
+  challengeGame = '/challenge',
+  tutorial = '/tutorial',
+  dictionary = '/dictionary',
+  stats = '/stats',
+  level = '/level',
 }
 
 enum Numbers {
