@@ -34,6 +34,7 @@ function Auth(
               await APISingin();
             } else {
               await APIRegistration();
+              await APISingin();
             }
             setActive(!active);
           }}
