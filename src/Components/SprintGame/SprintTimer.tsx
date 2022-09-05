@@ -25,7 +25,10 @@ export default function SprintTimer({ ...args }: ISprintTimer) {
 
   return (
     <div className="timer">
-      {timer}
+      <div className="timer__line" />
+      <div className="timer__body">
+        {timer}
+      </div>
     </div>
   );
 }
