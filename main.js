@@ -2620,7 +2620,7 @@ var enums_UrlPath;
 var RoutePath;
 
 (function (RoutePath) {
-  RoutePath["main"] = "";
+  RoutePath["main"] = "/";
   RoutePath["games"] = "/games";
   RoutePath["sprintGame"] = "/sprint";
   RoutePath["challengeGame"] = "/challenge";
