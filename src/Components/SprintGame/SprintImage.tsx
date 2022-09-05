@@ -14,8 +14,8 @@ export default function SprintImage({ scoreCount, imageArray }: ISprintImage) {
           <img
             className="sprint__image"
             src={image
-              ? '../images/circle-filled.svg'
-              : '../images/circle-empty.svg'}
+              ? './images/circle-filled.svg'
+              : './images/circle-empty.svg'}
             alt=""
             key={getKey(ind)}
           />

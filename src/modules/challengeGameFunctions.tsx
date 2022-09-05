@@ -69,7 +69,7 @@ const getImageComponent = (buttonState: boolean, value: IWord, src: string) => {
     return (
       <div className="challenge__answer">
         <button className="sound-word" type="button" onClick={() => getSound(src)}>
-          <img src="../images/volumeImage.webp" alt="" className="challenge__image" />
+          <img src="./images/volumeImage.webp" alt="" className="challenge__image" />
         </button>
         <span className="challenge__eng-word _disabled">{value.word}</span>
       </div>
