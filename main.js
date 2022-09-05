@@ -611,7 +611,7 @@ var PopStateEventType = 'popstate';
  * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createbrowserhistory
  */
 
-function createBrowserHistory(options) {
+function history_createBrowserHistory(options) {
   if (options === void 0) {
     options = {};
   }
@@ -687,7 +687,7 @@ function createBrowserHistory(options) {
 
   if (index == null) {
     index = 0;
-    globalHistory.replaceState(extends_extends({}, globalHistory.state, {
+    globalHistory.replaceState(_extends({}, globalHistory.state, {
       idx: index
     }), '');
   }
@@ -702,7 +702,7 @@ function createBrowserHistory(options) {
       state = null;
     }
 
-    return readOnly(extends_extends({
+    return readOnly(_extends({
       pathname: location.pathname,
       hash: '',
       search: ''
@@ -842,7 +842,7 @@ function createBrowserHistory(options) {
  * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createhashhistory
  */
 
-function history_createHashHistory(options) {
+function createHashHistory(options) {
   if (options === void 0) {
     options = {};
   }
@@ -933,7 +933,7 @@ function history_createHashHistory(options) {
 
   if (index == null) {
     index = 0;
-    globalHistory.replaceState(_extends({}, globalHistory.state, {
+    globalHistory.replaceState(extends_extends({}, globalHistory.state, {
       idx: index
     }), '');
   }
@@ -960,7 +960,7 @@ function history_createHashHistory(options) {
       state = null;
     }
 
-    return readOnly(_extends({
+    return readOnly(extends_extends({
       pathname: location.pathname,
       hash: '',
       search: ''
@@ -2315,7 +2315,7 @@ function BrowserRouter(_ref) {
     children,
     window
   } = _ref;
-  let historyRef = (0,react.useRef)();
+  let historyRef = useRef();
 
   if (historyRef.current == null) {
     historyRef.current = createBrowserHistory({
@@ -2324,12 +2324,12 @@ function BrowserRouter(_ref) {
   }
 
   let history = historyRef.current;
-  let [state, setState] = (0,react.useState)({
+  let [state, setState] = useState({
     action: history.action,
     location: history.location
   });
-  (0,react.useLayoutEffect)(() => history.listen(setState), [history]);
-  return /*#__PURE__*/(0,react.createElement)(react_router_Router, {
+  useLayoutEffect(() => history.listen(setState), [history]);
+  return /*#__PURE__*/createElement(Router, {
     basename: basename,
     children: children,
     location: state.location,
@@ -2348,7 +2348,7 @@ function HashRouter(_ref2) {
     children,
     window
   } = _ref2;
-  let historyRef = useRef();
+  let historyRef = (0,react.useRef)();
 
   if (historyRef.current == null) {
     historyRef.current = createHashHistory({
@@ -2357,12 +2357,12 @@ function HashRouter(_ref2) {
   }
 
   let history = historyRef.current;
-  let [state, setState] = useState({
+  let [state, setState] = (0,react.useState)({
     action: history.action,
     location: history.location
   });
-  useLayoutEffect(() => history.listen(setState), [history]);
-  return /*#__PURE__*/createElement(Router, {
+  (0,react.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /*#__PURE__*/(0,react.createElement)(react_router_Router, {
     basename: basename,
     children: children,
     location: state.location,
@@ -2620,14 +2620,14 @@ var enums_UrlPath;
 var RoutePath;
 
 (function (RoutePath) {
-  RoutePath["main"] = "";
-  RoutePath["games"] = "games";
-  RoutePath["sprintGame"] = "sprint";
-  RoutePath["challengeGame"] = "challenge";
-  RoutePath["tutorial"] = "tutorial";
-  RoutePath["dictionary"] = "dictionary";
-  RoutePath["stats"] = "stats";
-  RoutePath["level"] = "level";
+  RoutePath["main"] = "/";
+  RoutePath["games"] = "/games";
+  RoutePath["sprintGame"] = "/sprint";
+  RoutePath["challengeGame"] = "/challenge";
+  RoutePath["tutorial"] = "/tutorial";
+  RoutePath["dictionary"] = "/dictionary";
+  RoutePath["stats"] = "/stats";
+  RoutePath["level"] = "/level";
 })(RoutePath || (RoutePath = {}));
 
 var Numbers;
@@ -4798,8 +4798,7 @@ function App() {
 
 var container = document.getElementById('root');
 var root = (0,client/* createRoot */.s)(container);
-root.render( /*#__PURE__*/(0,jsx_runtime.jsx)(BrowserRouter, {
-  basename: "/rslang",
+root.render( /*#__PURE__*/(0,jsx_runtime.jsx)(HashRouter, {
   children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_App, {})
 }));
 })();
