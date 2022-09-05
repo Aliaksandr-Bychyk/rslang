@@ -1,0 +1,20 @@
+.footer {
+  background-color: #333333;
+  color: #ffffff;
+  .footer__wrapper {
+    height: 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .developer__wrapper {
+      .developer__link {
+        color: #ffffffff;
+        transition: 0.2s ease-in-out;
+        margin-left: 10px;
+        &:hover {
+          color: #1890ff;
+        }
+      }
+    }
+  }
+}
