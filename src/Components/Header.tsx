@@ -22,19 +22,9 @@ function Header(): JSX.Element {
       path: RoutePath.tutorial,
     },
     {
-      value: 'Словарь',
-      id: 2,
-      path: RoutePath.dictionary,
-    },
-    {
       value: 'Мини-игры',
-      id: 3,
+      id: 2,
       path: RoutePath.games,
-    },
-    {
-      value: 'Статиска',
-      id: 4,
-      path: RoutePath.stats,
     },
   ];
   return (

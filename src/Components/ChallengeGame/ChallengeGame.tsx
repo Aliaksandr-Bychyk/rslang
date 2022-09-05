@@ -63,7 +63,7 @@ export default function ChallengeGame() {
             )}
             disabled={!buttonState}
           >
-            { results.length === Numbers.arraySize ? 'Results' : 'Next' }
+            { results.length === Numbers.arraySize ? 'Результат' : 'Далее' }
           </button>
         </div>
       </div>

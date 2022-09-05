@@ -8,11 +8,11 @@ export default function SprintResults({ score }: { score: number }) {
       <div className="sprint">
         <div className="sprint-result">
           <div className="sprint-result__score">
-            Your score:
+            Ваш результат:
             <span className="score">{ score }</span>
           </div>
           <button type="button" className="results__button button sprint-result__button">
-            <NavLink className="results__link" to={RoutePath.games}>Go Back</NavLink>
+            <NavLink className="results__link" to={RoutePath.games}>Назад</NavLink>
           </button>
         </div>
       </div>

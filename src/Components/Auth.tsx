@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, { useState } from 'react';
 import {
   resetForm, APIRegistration, APISingin,
 } from '../modules/authorization';

@@ -10,14 +10,14 @@ export default function SprintButton({ getButtonArgs, wordIndex, index }: ISprin
         type="button"
         onClick={() => getClick(getButtonArgs(!(wordIndex === index)))}
       >
-        False
+        Не верно
       </button>
       <button
         className="sprint__true button"
         type="button"
         onClick={() => getClick(getButtonArgs(wordIndex === index))}
       >
-        True
+        Верно
       </button>
     </div>
   );
