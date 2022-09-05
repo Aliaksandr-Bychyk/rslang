@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Numbers, URL, UrlPath } from '../../enums/enums';
 import { IResult, IWord } from '../../Interfaces/gameInterfaces';
 import { createGameArray, nextButtonClick } from '../../modules/challengeGameFunctions';
-import { getRandomNumber, getRandomNumbers } from '../../modules/getRandom';
+import { getRandomNumbers } from '../../modules/getRandom';
 import ChallangeGameResults from './ChallangeGameResults';
 import ChallengeGameWords from './ChallengeGameWords';
 import Loading from '../Loading';
+import { getLocal } from '../../modules/getLocal';
 
 export default function ChallengeGame() {
   const [items, setItems] = useState([] as IWord[]);
@@ -14,9 +15,10 @@ export default function ChallengeGame() {
   const [buttonState, setButtonState] = useState(false);
   const [isResult, setIsResult] = useState(false);
   const [results, setResults] = useState([] as IResult[]);
+  const { group, page } = getLocal();
 
   useEffect(() => {
-    fetch(`${URL.start}${UrlPath.words}?page=${getRandomNumber(Numbers.pages)}`)
+    fetch(`${URL.start}${UrlPath.words}?page=${page}&group=${group}`)
       .then((res) => res.json())
       .then((result: IWord[]) => {
         setItems([...result]);

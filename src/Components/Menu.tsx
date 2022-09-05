@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { IMenu } from '../Interfaces/menuInterfaces';
+import { setBook } from '../modules/getLocal';
 
 function Menu({
   active, setActive, header, items,
@@ -20,7 +21,13 @@ function Menu({
           {
             items.map((item) => (
               <li className="navigation__item" key={item.id}>
-                <NavLink to={item.path} className="navigation__item">{item.value}</NavLink>
+                <NavLink
+                  to={item.path}
+                  className="navigation__item"
+                  onClick={() => setBook('false', item.path)}
+                >
+                  {item.value}
+                </NavLink>
               </li>
             ))
           }
