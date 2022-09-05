@@ -32,7 +32,6 @@ async function APIRequest<T, U>(method: string, requestLink: string, body?: T, t
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(body),
     ...(Object.keys(body).length > 0) && { body: JSON.stringify(body) },
   });
   const content = await rawResponse.json() as U;
@@ -46,15 +45,14 @@ async function APIRegistration() {
     email: inputEmail.value,
     password: inputPassword.value,
   };
-  const { rawResponse, content } = await APIRequest<
+  await APIRequest<
   IBodyRequest, IAPIReqistrationResponse
   >(HTTPMethod.post, UrlPath.users, obj);
-  console.log(content, rawResponse.status);
 }
 
 async function APIGetNewToken(userID: string, token: string) {
-  const { rawResponse, content } = await APIRequest<unknown, IAPISigninResponse>(HTTPMethod.get, `${UrlPath.users}/${userID}/tokens`, {}, token);
-  console.log(content, rawResponse.status);
+  await APIRequest<unknown, IAPISigninResponse>(HTTPMethod.get, `${UrlPath.users}/${userID}/tokens`, {}, token);
+  console.log('new token');
 }
 
 async function APISingin() {
@@ -63,13 +61,11 @@ async function APISingin() {
     email: inputEmail.value,
     password: inputPassword.value,
   };
-  console.log(obj);
 
   const { rawResponse, content } = await APIRequest<
   IBodyRequest, IAPISigninResponse
   >(HTTPMethod.post, UrlPath.signin, obj);
 
-  console.log(content, rawResponse.status);
   if (rawResponse.status === 200) {
     window.localStorage.setItem('user', JSON.stringify({
       token: content.refreshToken,

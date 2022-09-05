@@ -1,10 +1,13 @@
 import React from 'react';
 
 function HeaderAuthorization(
-  { active, setActive }:
+  {
+    active,
+    setActive,
+  }:
   {
     active: boolean,
-    setActive: React.Dispatch<React.SetStateAction<boolean>>
+    setActive: React.Dispatch<React.SetStateAction<boolean>>,
   },
 ): JSX.Element {
   return (

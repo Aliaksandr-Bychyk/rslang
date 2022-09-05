@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import {
   resetForm, APIRegistration, APISingin,
 } from '../modules/authorization';
 
 function Auth(
-  { active, setActive }:
+  {
+    active,
+    setActive,
+  }:
   {
     active: boolean,
     setActive: React.Dispatch<React.SetStateAction<boolean>>
   },
 ) {
   const [isAuthModal, setAuthModal] = useState(true);
+
   return (
     <div className="modal-auth">
       <div className="modal-dialog modal-dialog-auth">
@@ -24,13 +28,12 @@ function Auth(
         </button>
         <form
           id="logInForm"
-          onSubmit={(event) => {
+          onSubmit={async (event) => {
             event.preventDefault();
-            if (isAuthModal) {
-              APISingin();
-            } else {
-              APIRegistration();
+            if (!isAuthModal) {
+              await APIRegistration();
             }
+            await APISingin();
             setActive(!active);
           }}
         >
