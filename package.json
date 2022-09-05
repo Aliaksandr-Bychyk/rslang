@@ -7,7 +7,8 @@
     "start": "webpack serve",
     "build": "webpack --mode production --env production",
     "lint": "eslint . --ext .tsx",
-    "lint:fix": "eslint . --ext .tsx --fix"
+    "lint:fix": "eslint . --ext .tsx --fix",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.1",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "image-minimizer-webpack-plugin": "^3.3.0",
     "imagemin": "^8.0.1",
