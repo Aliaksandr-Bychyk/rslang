@@ -1,0 +1,101 @@
+.main {
+  .about {
+    background-image: url('./../images/bg-main.jpg');
+    background-size: cover;
+    height: 850px;
+    .about__wrapper {
+      padding: 100px 0;
+      .about__content {
+        color: #ffffff;
+        width: 550px;
+        min-height: 637px;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+        border: 20px solid #ffffff;
+        .title__about {
+          font-size: 6rem;
+          font-weight: 900;
+          margin: 128px 30px 0;
+        }
+        .about__description {
+          text-align: justify;
+          font-size: 1.125rem;
+          font-weight: 400;
+          margin: 47px 30px 0;
+        }
+      }
+    }
+  }
+  .advantage {
+    color: #ffffff;
+    background-color: #fb4bd7;
+    padding-bottom: 30px;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .advantage__wrapper {
+        .advantage__item {
+          margin-top: 40px;
+          .advantage__title {
+            display: flex;
+            justify-content: space-between;
+          }
+          .advantage__name {
+            font-size: 2.5rem;
+            text-align: right;
+          }
+          .advantage__number {
+            color: yellow;
+            font-weight: 700;
+            font-size: 3.25rem;
+            line-height: 1.1;
+          }
+          .advantage__description {
+            margin-top: 10px;
+            font-size: 1rem;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+    .advantage__img {
+      width: 510px;
+      height: 448px;
+    }
+  }
+  .team {
+    object-fit: cover;
+    background-image: url("./../images/bg-team.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    padding: 55px 0;
+    .team__cards {
+      display: flex;
+      max-width: 885px;
+      width: 100%;
+      margin: 0 auto;
+      justify-content: space-between;
+      .team__card {
+        .card__img {
+          height: 153px;
+          width: 153px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+    .team__description {
+      max-width: 735px;
+      width: 100%;
+      margin: 23px auto 0;
+      text-align: center;
+    }
+  }
+}
+
