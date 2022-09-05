@@ -7,6 +7,7 @@ import SprintGame from '../Components/SprintGame/SprintGame';
 import Tutorial from '../Components/Tutorial';
 import Dictionary from '../Components/Dictionary';
 import Stats from '../Components/Stats';
+import DifficultyLevel from '../Components/DifficultyLevel';
 
 const routesArray = [
   {
@@ -36,6 +37,10 @@ const routesArray = [
   {
     route: RoutePath.challengeGame,
     component: <ChallengeGame />,
+  },
+  {
+    route: RoutePath.level,
+    component: <DifficultyLevel />,
   },
 ];
 

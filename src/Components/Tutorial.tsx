@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { RoutePath, URL } from '../enums/enums';
 import { IWord } from '../Interfaces/gameInterfaces';
+import { setBook } from '../modules/getLocal';
 import Word from './Word';
 
 function Tutorial() {
@@ -85,7 +86,13 @@ function Tutorial() {
         <p className="game__offer">
           У вас есть возможность сыграть в игры
         </p>
-        <NavLink className="button game__btn" to={RoutePath.games}>Мини-игры</NavLink>
+        <NavLink
+          className="button game__btn"
+          to={RoutePath.games}
+          onClick={() => setBook('true')}
+        >
+          Мини-игры
+        </NavLink>
       </div>
 
       <div className="wrapper__words">

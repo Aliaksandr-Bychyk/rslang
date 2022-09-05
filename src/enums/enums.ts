@@ -16,6 +16,7 @@ enum RoutePath {
   tutorial = '/tutorial',
   dictionary = '/dictionary',
   stats = '/stats',
+  level = '/level',
 }
 
 enum Numbers {
