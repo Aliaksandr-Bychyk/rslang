@@ -1,10 +1,14 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import React, { useState } from 'react';
 import {
   resetForm, APIRegistration, APISingin,
 } from '../modules/authorization';
 
 function Auth(
-  { active, setActive }:
+  {
+    active,
+    setActive,
+  }:
   {
     active: boolean,
     setActive: React.Dispatch<React.SetStateAction<boolean>>
@@ -24,12 +28,12 @@ function Auth(
         </button>
         <form
           id="logInForm"
-          onSubmit={(event) => {
+          onSubmit={async (event) => {
             event.preventDefault();
             if (isAuthModal) {
-              APISingin();
+              await APISingin();
             } else {
-              APIRegistration();
+              await APIRegistration();
             }
             setActive(!active);
           }}

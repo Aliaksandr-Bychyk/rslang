@@ -1,11 +1,33 @@
 import React from 'react';
 import { IAPISigninResponse } from '../../modules/authorization';
 
-function HeaderProfile(): JSX.Element {
+function HeaderProfile(
+  {
+    setActive,
+  }:
+  {
+    setActive: React.Dispatch<React.SetStateAction<boolean>>,
+  },
+): JSX.Element {
   return (
     <div className="profile__contaier">
-      <button className="button profile__btn" onClick={() => { }} type="button">{(JSON.parse(window.localStorage.getItem('user')) as IAPISigninResponse).name}</button>
-      <button className="button logout__btn" onClick={() => { }} type="button">
+      <button
+        className="button profile__btn"
+        onClick={() => { }}
+        type="button"
+        title="Профиль"
+      >
+        {(JSON.parse(window.localStorage.getItem('user')) as IAPISigninResponse).name}
+      </button>
+      <button
+        className="button logout__btn"
+        onClick={() => {
+          window.localStorage.removeItem('user');
+          setActive(null);
+        }}
+        type="button"
+        title="Выйти"
+      >
         <svg
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +52,6 @@ function HeaderProfile(): JSX.Element {
             </g>
           </g>
         </svg>
-
       </button>
     </div>
   );

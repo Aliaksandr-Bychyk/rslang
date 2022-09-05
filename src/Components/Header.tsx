@@ -9,6 +9,7 @@ import HeaderAuthorization from './Profile/HeaderAuthorization';
 function Header(): JSX.Element {
   const [menuActive, setMenuActive] = useState(false);
   const [authActive, setAuthActive] = useState(false);
+  const localUserProfile = window.localStorage.getItem('user');
   const menuItems: IMenuItems[] = [
     {
       value: 'Главная',
@@ -36,7 +37,6 @@ function Header(): JSX.Element {
       path: RoutePath.stats,
     },
   ];
-
   return (
     <header className="header">
       <div className="container">
@@ -51,8 +51,20 @@ function Header(): JSX.Element {
               <span />
             </button>
           </nav>
-          {/* <HeaderProfile /> */}
-          <HeaderAuthorization active={authActive} setActive={setAuthActive} />
+          {
+            localUserProfile && !authActive
+              ? (
+                <HeaderProfile
+                  setActive={setAuthActive}
+                />
+              )
+              : (
+                <HeaderAuthorization
+                  active={authActive}
+                  setActive={setAuthActive}
+                />
+              )
+          }
         </div>
       </div>
       <Menu active={menuActive} setActive={setMenuActive} header="Меню" items={menuItems} />
