@@ -5,7 +5,7 @@ enum URL {
 enum UrlPath {
   words = '/words',
   users = '/users',
-  singin = '/singin',
+  signin = '/signin',
 }
 
 enum RoutePath {
@@ -34,6 +34,11 @@ enum Arrow {
   left = 'ArrowLeft',
 }
 
+enum HTTPMethod {
+  get = 'GET',
+  post = 'POST',
+}
+
 export {
-  URL, UrlPath, RoutePath, Numbers, Arrow,
+  URL, UrlPath, RoutePath, Numbers, Arrow, HTTPMethod,
 };

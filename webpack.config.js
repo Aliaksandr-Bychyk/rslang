@@ -33,7 +33,7 @@ module.exports = (env) => {
         }
       ],
     },
-    devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
+    devtool: isProduction ? 'eval-cheap-module-source-map' : 'source-map',
     devServer: {
       static: {
         directory: path.join(__dirname, 'dist'),
